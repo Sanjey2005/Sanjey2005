@@ -2,7 +2,7 @@
 
 I'm Sanjey. I do the backstage work of AI products: the unexciting but necessary pipeline between a camera feed (or a pile of PDFs) and an answer someone can actually use.
 
-I'm doing a 5-year integrated M.Sc. in Software Systems at **PSG Tech**, Coimbatore (class of '28). Our 7th and 10th semesters are internship semesters, so this semester I'm full-time at **Katomaran** as an AI & Video Analytics intern. I work on real-time video analytics (intrusion, crowd and perimeter-crossing alerts) and a distributed pipeline that fans video out to YOLO inference workers.
+Right now that backstage is **Katomaran**, where I'm spending my internship semester as an AI & Video Analytics intern. I build real-time alerts for intrusion, crowds and perimeter crossing, and a distributed pipeline that fans video out to YOLO inference workers. Back at college, I'm doing a 5-year integrated M.Sc. in Software Systems at **PSG Tech**, Coimbatore (class of '28).
 
 I usually start with the architecture on paper, then build fast with AI coding tools. A lot of what's below started at hackathons.
 
