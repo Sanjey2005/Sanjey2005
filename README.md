@@ -1,6 +1,6 @@
 <img src="./banner.svg" alt="A CCTV-style frame with detection boxes around my name, my internship at Katomaran, my degree at PSG Tech, and a cup of filter coffee." width="100%">
 
-I'm Sanjey. I work on the unglamorous middle of AI products: the pipeline between a camera feed (or a pile of PDFs) and an answer someone can actually use.
+I'm Sanjey. I do the backstage work of AI products: the unexciting but necessary pipeline between a camera feed (or a pile of PDFs) and an answer someone can actually use.
 
 I'm doing a 5-year integrated M.Sc. in Software Systems at **PSG Tech**, Coimbatore (class of '28). Our 7th and 10th semesters are internship semesters, so this semester I'm full-time at **Katomaran** as an AI & Video Analytics intern. I work on real-time video analytics (intrusion, crowd and perimeter-crossing alerts) and a distributed pipeline that fans video out to YOLO inference workers.
 
