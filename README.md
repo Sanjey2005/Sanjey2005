@@ -1,8 +1,8 @@
 <img src="./banner.svg" alt="A CCTV-style frame with detection boxes around my name, my internship at Katomaran, my degree at PSG Tech, and a cup of filter coffee." width="100%">
 
-I'm Shree. I work on the unglamorous middle of AI products: the pipeline between a camera feed (or a pile of PDFs) and an answer someone can actually use.
+I'm Sanjey. I work on the unglamorous middle of AI products: the pipeline between a camera feed (or a pile of PDFs) and an answer someone can actually use.
 
-By day I'm an **AI & Video Analytics intern at Katomaran**, working on real-time video analytics (intrusion, crowd and perimeter-crossing alerts) and a distributed pipeline that fans video out to YOLO inference workers. The rest of the time I'm finishing a 5-year M.Sc. in Software Systems at **PSG Tech**, Coimbatore. Class of '28.
+I'm doing a 5-year integrated M.Sc. in Software Systems at **PSG Tech**, Coimbatore (class of '28). Our 7th and 10th semesters are internship semesters, so this semester I'm full-time at **Katomaran** as an AI & Video Analytics intern. I work on real-time video analytics (intrusion, crowd and perimeter-crossing alerts) and a distributed pipeline that fans video out to YOLO inference workers.
 
 I usually start with the architecture on paper, then build fast with AI coding tools. A lot of what's below started at hackathons.
 
@@ -52,7 +52,7 @@ A scheduling assistant that lives in WhatsApp. When a meeting gets cancelled, tr
 ### [Distributed SandPy](https://github.com/Sanjey2005/Distributed_SandPy)
 *Stateful Python execution that scales past one box.*
 
-We took an [open-source single-machine sandbox](https://github.com/anukriti-ranjan/sandboxed-jupyter-code-exec) (one Jupyter kernel per session) and made it distributed. A FastAPI dispatcher queues jobs in Redis, claims a free worker with an atomic Lua script, pins each user's session to the same worker so their variables survive, and streams job status back over WebSockets.
+We took an [open-source single-machine sandbox](https://github.com/anukriti-ranjan/sandboxed-jupyter-code-exec) (one Jupyter kernel per session) and made it distributed. A FastAPI dispatcher queues jobs in Redis, claims the least-busy worker with an atomic Lua script, keeps each user on the same worker, elects one leader among several dispatchers, and streams job status back over WebSockets.
 
 `FastAPI` `Redis` `Docker` `Jupyter` `WebSockets`
 
@@ -76,5 +76,3 @@ Drop in a PDF or DOCX and get a curriculum-aligned quiz back in about 30 seconds
 ## Say hi
 
 If you're hiring, or you just want to talk about video pipelines, I'm on [LinkedIn](https://www.linkedin.com/in/shree-sanjey-404547285/) and at [sanjey8105@gmail.com](mailto:sanjey8105@gmail.com).
-
-<sub>The banner is a fake detection frame. The coffee detection is the most accurate model I've ever shipped.</sub>

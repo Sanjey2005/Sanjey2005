@@ -41,10 +41,10 @@
 
     <!-- #1 person -->
     <g class="det d1">
-      <rect x="64" y="98" width="490" height="88" fill="none" stroke="#4ade80" stroke-width="2"/>
+      <rect x="64" y="98" width="268" height="88" fill="none" stroke="#4ade80" stroke-width="2"/>
       <rect x="63" y="76" width="124" height="22" fill="#4ade80"/>
       <text class="tag" x="71" y="92">#1 person 0.99</text>
-      <text x="84" y="162" font-size="62" font-weight="700" fill="#f1f5f9" textLength="450" lengthAdjust="spacing">Shree Sanjey</text>
+      <text x="86" y="162" font-size="62" font-weight="700" fill="#f1f5f9" textLength="224" lengthAdjust="spacing">Sanjey</text>
     </g>
 
     <!-- #2 intern -->
