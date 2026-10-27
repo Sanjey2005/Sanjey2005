@@ -1,20 +1,80 @@
+<img src="./banner.svg" alt="A CCTV-style frame with detection boxes around my name, my internship at Katomaran, my degree at PSG Tech, and a cup of filter coffee." width="100%">
 
-Hi, I'm Shree Sanjey
-AI & Video Analytics Intern at Katomaran Technologies · M.Sc. Software Systems, PSG College of Technology (2028)
+I'm Shree. I work on the unglamorous middle of AI products: the pipeline between a camera feed (or a pile of PDFs) and an answer someone can actually use.
 
-I build computer vision and LLM systems, mostly the backend and inference side: video pipelines, inference workers, vector search, and the APIs around them.
+By day I'm an **AI & Video Analytics intern at Katomaran**, working on real-time video analytics (intrusion, crowd and perimeter-crossing alerts) and a distributed pipeline that fans video out to YOLO inference workers. The rest of the time I'm finishing a 5-year M.Sc. in Software Systems at **PSG Tech**, Coimbatore. Class of '28.
 
-Now
-Building real-time video analytics (intrusion, crowd, perimeter crossing) and working on a distributed video processing pipeline with YOLO inference workers at Katomaran
-Selected projects
-Project	What it does	Stack
-FaceTracker	Multi-camera face recognition and visitor analytics across 4 RTSP streams and 10,000+ faces	YOLOv11, ByteTrack, InsightFace, FAISS, FastAPI
-Placement Chronicles	RAG search over 100+ interview experiences, used by 400+ PSG Tech students	Next.js, MongoDB Atlas Vector Search
-Distributed SandPy	Sandboxed, stateful Python execution: per-session Jupyter kernels behind a dispatcher with Docker workers	FastAPI, Jupyter, Docker
-PlanB	WhatsApp scheduling assistant that detects disruptions and reschedules your day	LangGraph, Google Calendar API, AWS
-QuizCraft AI	PDF/DOCX to quiz generation with async workers	Django REST, Celery, Redis, Llama 3.1 70B
-Tools I use most
-Python · FastAPI · PyTorch · OpenCV · YOLO · vLLM · PostgreSQL · Redis · RabbitMQ · Docker
+I usually start with the architecture on paper, then build fast with AI coding tools. A lot of what's below started at hackathons.
 
-LinkedIn · Email
+<br>
 
+## Things I've built
+
+### [FaceTracker](https://github.com/Sanjey2005/FaceTracker)
+*A CCTV setup that knows who walked in, not just that someone did.*
+
+This was my entry for Katomaran's hackathon, a couple of months before I joined them. It takes up to four RTSP streams, finds faces with YOLOv11, follows them with ByteTrack, and matches them against a FAISS index of InsightFace embeddings, so every visitor is counted once. Entry and exit events show up on a React dashboard over WebSockets.
+
+`YOLOv11` `ByteTrack` `InsightFace` `FAISS` `FastAPI` `React`
+
+<details>
+<summary><b>How a frame becomes a visitor count</b></summary>
+<br>
+
+```mermaid
+flowchart LR
+  A["RTSP stream or video"] --> B["YOLOv11<br>face detection"]
+  B --> C["ByteTrack<br>tracking"]
+  C --> D["InsightFace<br>512-d embedding"]
+  D --> E{"FAISS:<br>seen before?"}
+  E -- yes --> F["same visitor"]
+  E -- no --> G["register new visitor"]
+  F --> H["FastAPI + WebSocket<br>to the dashboard"]
+  G --> H
+```
+
+</details>
+
+### [Placement Chronicles](https://github.com/Sanjey2005/placement-chronicles) · [live](https://placement-chronicles.vercel.app)
+*Every senior's interview story, searchable.*
+
+Our seniors' interview experiences were sitting in 100+ PDFs. I turned them into something you can just ask, like *"what did Caterpillar ask in round 2?"*, and get an answer pulled from the real write-ups. 400+ PSG Tech students have used it to prep.
+
+`Next.js` `MongoDB Atlas Vector Search` `Gemini` `RAG`
+
+### [PlanB](https://github.com/Sanjey2005/PlanB)
+*For the days that don't go to plan.*
+
+A scheduling assistant that lives in WhatsApp. When a meeting gets cancelled, traffic jams or an urgent email lands, it works out what that breaks, reshuffles your Google Calendar, drafts the "can we move this?" emails and texts you a summary. No app to open. It's 14 LangGraph agents on AWS Lambda, built at Neoverse '26.
+
+`LangGraph` `Llama 3.3 70B` `Gemini` `FastAPI` `AWS Lambda` `WhatsApp API`
+
+### [Distributed SandPy](https://github.com/Sanjey2005/Distributed_SandPy)
+*Stateful Python execution that scales past one box.*
+
+We took an [open-source single-machine sandbox](https://github.com/anukriti-ranjan/sandboxed-jupyter-code-exec) (one Jupyter kernel per session) and made it distributed. A FastAPI dispatcher queues jobs in Redis, claims a free worker with an atomic Lua script, pins each user's session to the same worker so their variables survive, and streams job status back over WebSockets.
+
+`FastAPI` `Redis` `Docker` `Jupyter` `WebSockets`
+
+### [QuizCraft AI](https://github.com/Sanjey2005/QuizCraftAI)
+*Notes in, quiz out.*
+
+Drop in a PDF or DOCX and get a curriculum-aligned quiz back in about 30 seconds. Llama 3.1 70B writes the questions, and Celery and Redis do the waiting so the web app doesn't have to. Classrooms, timed attempts and leaderboards sit on top. Built at the TeachEdison Hackathon 2026.
+
+`Django REST` `Celery` `Redis` `PostgreSQL` `Next.js` `Llama 3.1 70B`
+
+**Also:** [sentiment analysis on 1.6M tweets](https://github.com/Sanjey2005/TwitterSentimentAnalysis), comparing logistic regression, random forests, LSTM and BERT, with fairness and adversarial-robustness checks.
+
+<br>
+
+## Right now
+
+- Working through NeetCode 150, one problem a day, in Python.
+- Looking for full-time backend, ML or computer vision roles from 2028.
+- What's usually open on my screen: Python, FastAPI, PyTorch, OpenCV, YOLO, vLLM, PostgreSQL, Redis, RabbitMQ, Docker.
+
+## Say hi
+
+If you're hiring, or you just want to talk about video pipelines, I'm on [LinkedIn](https://www.linkedin.com/in/shree-sanjey-404547285/) and at [sanjey8105@gmail.com](mailto:sanjey8105@gmail.com).
+
+<sub>The banner is a fake detection frame. The coffee detection is the most accurate model I've ever shipped.</sub>
